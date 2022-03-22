@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  p names.push("斎藤")
+  p names << "斎藤"
 end
 
 def q2
@@ -27,7 +27,7 @@ def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-  sports.delete(nil)
+  sports.compact!
   # 以下は変更しないで下さい
   p sports
 end
@@ -45,7 +45,7 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  p numbers2 = numbers1.map{ |n| n*10}
+  p numbers2 = numbers1.map{ |n| n * 10 }
 end
 
 def q7
