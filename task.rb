@@ -61,7 +61,8 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-
+  programming_languages.map!(&:capitalize)
+  upper_case_programming_languages = programming_languages.map(&:upcase)
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -71,28 +72,41 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-
+  names.each.with_index(1) do |name, i|
+    puts "会員No.#{i} #{name}さん"
+  end
 end
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-
+  foods.each do |food|
+    if food.include?("うに")
+      puts "#{food} 好物です"
+    elsif 
+      puts "#{food} まぁまぁ好きです"
+    end
+  end
 end
 
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-
+  sports.flatten!
+  sports.uniq!
+  puts "ユーザーの趣味一覧"
+    sports.each.with_index(1) do |sports, i|
+      puts "No#{i} #{sports}"
+    end
 end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
+  puts data [:user] [:name]
 end
 
 def q13
@@ -100,14 +114,15 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-
+  user_data.merge!(update_data)
+  p user_data
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+  p data_keys = data.keys
 end
 
 def q15
@@ -115,7 +130,17 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+  if data1.key?(:age)
+    puts "#{data1}\n # 実行結果\n OK"
+  elsif 
+    puts "#{data1}\n # 実行結果\n NG"
+  end
 
+  if data2.key?(:age)
+    puts "#{data2}\n # 実行結果\n OK"
+  elsif 
+    puts "#{data2}\n # 実行結果\n NG"
+  end
 end
 
 def q16
@@ -127,7 +152,9 @@ def q16
   ]
 
   # 以下に回答を記載
-
+  users.each do |value|
+    puts "私の名前は#{value[:name]}です。年齢は#{value[:age]}歳です。"
+  end
 end
 
 class UserQ17
