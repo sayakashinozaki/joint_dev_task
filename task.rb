@@ -45,7 +45,7 @@ def q6
   numbers1 = [1, 2, 3, 4, 5]
 
   # 以下に回答を記載
-  p numbers2 = numbers1.map{ |n| n * 10 }
+  p numbers2 = numbers1.map { |n| n * 10 }
 end
 
 def q7
@@ -84,7 +84,7 @@ def q10
   foods.each do |food|
     if food.include?("うに")
       puts "#{food} 好物です"
-    elsif 
+    else
       puts "#{food} まぁまぁ好きです"
     end
   end
@@ -96,16 +96,16 @@ def q11
   # 以下に回答を記載
   sports.flatten!.uniq!
   puts "ユーザーの趣味一覧"
-    sports.each.with_index(1) do |sports, i|
-      puts "No#{i} #{sports}"
-    end
+  sports.each.with_index(1) do |sports, i|
+    puts "No#{i} #{sports}"
+  end
 end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-  puts data [:user][:name]
+  puts data[:user][:name]
 end
 
 def q13
@@ -138,7 +138,7 @@ def q16
     { name: "satou", age: 22 },
     { name: "yamada", age: 12 },
     { name: "takahashi", age: 32 },
-    { name: "nakamura", age: 41 }
+    { name: "nakamura", age: 41 },
   ]
 
   # 以下に回答を記載
@@ -149,7 +149,19 @@ end
 
 class UserQ17
   # 以下に回答を記載
+  def initialize(name:, age:, gender:)
+    @name = name
+    @age = age
+    @gender = gender
+  end
 
+  def info
+    puts <<~USER
+           名前: #{@name}
+           年齢: #{@age}
+           性別: #{@gender}
+         USER
+  end
 end
 
 def q17
@@ -164,7 +176,18 @@ end
 
 class UserQ18
   # 以下に回答を記載
+  def initialize(name:, age:)
+    @name = name
+    @age = age
+  end
 
+  def introduce
+    if @age > 18
+      puts "こんにちは，#{@name}と申します。宜しくお願いいたします。"
+    else
+      puts "はいさいまいど〜，#{@name}です！！！"
+    end
+  end
 end
 
 def q18
@@ -200,7 +223,6 @@ class Zoo
 
 end
 
-
 def q20
   # ここは変更しないで下さい（動物園・ユーザー情報は変更していただいてOKです）
   zoo = Zoo.new(name: "旭山動物園", entry_fee: { infant: 0, children: 400, adult: 800, senior: 500 })
@@ -209,7 +231,7 @@ def q20
     UserQ20.new(name: "たま", age: 3),
     UserQ20.new(name: "ゆたぼん", age: 10),
     UserQ20.new(name: "あじー", age: 32),
-    UserQ20.new(name: "ぎん", age: 108)
+    UserQ20.new(name: "ぎん", age: 108),
   ]
 
   users.each do |user|
